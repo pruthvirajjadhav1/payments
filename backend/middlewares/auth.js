@@ -14,7 +14,7 @@ const authMiddleware = (req,res,next) => {
     try{
     const decode = jwt.verify(token, process.env.JWT_SECRET);
     
-    req.user = decode.userId;
+    req.user = decode.id;
 
     console.log("This is in middleware: ", req.user);
 
